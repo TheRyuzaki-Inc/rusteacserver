@@ -1,1 +1,1 @@
-process.exit(0)
+console.log("hi")
