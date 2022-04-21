@@ -5,7 +5,7 @@ const { exec } = require('child_process');
 
 const goCheckLocalEAC = () => {
             if (fs.existsSync("./EasyAntiCheat.dll")) {
-                const EacSize: number = fs.statSync("./EasyAntiCheat.dll").size / 1024;
+                const EacSize = fs.statSync("./EasyAntiCheat.dll").size / 1024;
                 if (EacSize < 750 || EacSize > 800) {
                     process.exit(0);
                     return;
