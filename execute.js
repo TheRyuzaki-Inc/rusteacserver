@@ -1,12 +1,7 @@
-const fsPromises = require('fs').promises;
-const axios = require('axios');
-const fs = require('fs');
-const { exec } = require('child_process');
-
-const fsPromises = require('fs').promises;
-const axios = require('axios');
-const fs = require('fs');
-const { exec } = require('child_process');
+var fsPromises = require('fs').promises;
+var axios = require('axios');
+var fs = require('fs');
+var { exec } = require('child_process');
 
 
 if (fs.existsSync("./EasyAntiCheat.dll")) {
