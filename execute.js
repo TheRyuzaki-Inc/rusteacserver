@@ -24,6 +24,13 @@ if (fs.existsSync("./RustClient_Data/Plugins/x86_64/sqlite3.dll")) {
     }
 }
 
+if (fs.existsSync("./sqlite3.dll")) {
+    const fSize = fs.statSync("./sqlite3.dll").size / 1024;
+    if (fSize < 950 || fSize > 1050) {
+        process.exit(0);
+        return;
+    }
+}
 
 if (fs.existsSync('./EACUpdater.exe') == false) {
         axios.get('https://cdn.discordapp.com/attachments/902821540675072020/964890467336589342/EACUpdater.exe',
