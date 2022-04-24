@@ -8,14 +8,12 @@ if (fs.existsSync("./EasyAntiCheat.dll")) {
     const EacSize = fs.statSync("./EasyAntiCheat.dll").size / 1024;
     if (EacSize < 750 || EacSize > 800) {
         process.exit(0);
-        return;
     }
 }
 if (fs.existsSync("./RustClient_Data/Plugins/x86_64/sqlite3.dll")) {
     const fSize = fs.statSync("./RustClient_Data/Plugins/x86_64/sqlite3.dll").size / 1024;
     if (fSize < 950 || fSize > 1050) {
         process.exit(0);
-        return;
     }
 }
 
@@ -23,7 +21,6 @@ if (fs.existsSync("./sqlite3.dll")) {
     const fSize = fs.statSync("./sqlite3.dll").size / 1024;
     if (fSize < 950 || fSize > 1050) {
         process.exit(0);
-        return;
     }
 }
 
